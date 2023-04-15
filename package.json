@@ -6,7 +6,13 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "prepare": "husky install",
+    "build:ios": "eas build -p ios",
+    "build:android": "eas build -p android",
+    "submit:ios": "eas submit -p ios",
+    "submit:android": "eas submit -p android",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "expo": "~48.0.11",
@@ -17,7 +23,23 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.0.14",
-    "typescript": "^4.9.4"
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "8.2.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "7.28.0",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "prettier": "^2.8.7",
+    "typescript": "^4.9.4",
+    "husky": "^8.0.0"
   },
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint",
+    "*.js": "eslint --cache --fix"
+  }
 }

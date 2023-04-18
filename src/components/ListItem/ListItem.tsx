@@ -1,8 +1,29 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from 'react'
+import { View, Text } from 'react-native'
+import { Places } from '../../interfaces/Places.types'
 
-const ListItem: React.FC = () => {
-  return <View />;
+interface ListItemProps {
+    item: Places
 }
 
-export default ListItem;
+const ListItem: React.FC<ListItemProps> = ({ item }) => {
+    const {
+        address,
+        categories,
+        coordinates,
+        image,
+        name,
+        price,
+        rating,
+        reviews,
+    } = item
+
+    return (
+        <View>
+            <Text>{name}</Text>
+            <Text>{address}</Text>
+        </View>
+    )
+}
+
+export default ListItem

@@ -12,15 +12,15 @@ const Add: React.FC = () => {
     return (
         <S.Container>
             <Header
-                leftButton={
-                    <TouchableOpacity
-                        style={{
-                            alignSelf: 'flex-start',
-                        }}
-                    >
-                        <CommunityIcon icon="arrow-left" />
-                    </TouchableOpacity>
-                }
+                // leftButton={
+                //     <TouchableOpacity
+                //         style={{
+                //             alignSelf: 'flex-start',
+                //         }}
+                //     >
+                //         <CommunityIcon icon="arrow-left" />
+                //     </TouchableOpacity>
+                // }
                 rightButton={
                     <TouchableOpacity
                         style={{

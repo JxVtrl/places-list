@@ -12,9 +12,9 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ leftButton, title, rightButton }) => {
     return (
         <S.Container>
-            {leftButton && <S.HeaderItem>{leftButton}</S.HeaderItem>}
+            <S.HeaderItem>{leftButton}</S.HeaderItem>
             {title && <Text>{title}</Text>}
-            {rightButton && <S.HeaderItem>{rightButton}</S.HeaderItem>}
+            <S.HeaderItem>{rightButton}</S.HeaderItem>
         </S.Container>
     )
 }

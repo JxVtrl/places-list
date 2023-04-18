@@ -14,9 +14,9 @@ export const ContainerInput = styled.View`
 `;
 
 export const InputCustom = styled.TextInput<{ error: boolean }>`
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
+  /* appearance: none; */
   height: 40px;
   width: ${(props :any) => props.width || '100%'};
   border-radius: 8px;
@@ -54,7 +54,7 @@ export const InputCustom = styled.TextInput<{ error: boolean }>`
     font-style: normal;
     font-stretch: normal;
     letter-spacing: normal;
-    color: ${tokens.colors.ligth};
+    color: ${tokens.colors.light};
   }
 `;
 

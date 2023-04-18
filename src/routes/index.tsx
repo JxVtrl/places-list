@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { onAuthStateChanged } from 'firebase/auth'
 
 import Home from '../screens/Home'
 import Add from '../screens/Add'
@@ -10,6 +11,7 @@ import CommunityIcon from '../components/CommunityIcon'
 import Details from '../screens/Details/Details'
 
 import { AppProvider } from '../context/AppContext'
+import { FIREBASE_AUTH } from '../services/firebase'
 
 export type AppParamList = {
     General: undefined
@@ -62,7 +64,6 @@ function GeneralAppRoutes() {
                 options={{
                     tabBarLabel: 'Home',
                     headerShown: false,
-                    
                 }}
             />
             <Tab.Screen
@@ -116,6 +117,12 @@ function AuthRoutes() {
 const Stack = createNativeStackNavigator()
 
 function Routes() {
+    // onAuthStateChanged(FIREBASE_AUTH, (user) => {
+    //     if (user) {
+    //     } else {
+    //     }
+    // })
+
     return (
         <>
             <Stack.Navigator initialRouteName="App">

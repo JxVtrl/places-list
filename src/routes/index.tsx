@@ -62,6 +62,7 @@ function GeneralAppRoutes() {
                 options={{
                     tabBarLabel: 'Home',
                     headerShown: false,
+                    
                 }}
             />
             <Tab.Screen

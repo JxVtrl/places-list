@@ -1,13 +1,12 @@
 export interface Places {
-    id: number
+    id?: number
     name: string
     address: string
     image: string
     rating: number
-    price: string
-    reviews: number
+    price?: number
     categories: string[]
-    coordinates: {
+    coordinates?: {
         latitude: number
         longitude: number
     }

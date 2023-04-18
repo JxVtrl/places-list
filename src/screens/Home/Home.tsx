@@ -11,15 +11,15 @@ const Home: React.FC = () => {
     return (
         <S.Container>
             <Header
-                rightButton={
-                    <TouchableOpacity
-                        style={{
-                            alignSelf: 'flex-end',
-                        }}
-                    >
-                        <Avatar />
-                    </TouchableOpacity>
-                }
+                // rightButton={
+                //     <TouchableOpacity
+                //         style={{
+                //             alignSelf: 'flex-end',
+                //         }}
+                //     >
+                //         <Avatar />
+                //     </TouchableOpacity>
+                // }
                 title="Lista de lugares"
             />
             <S.Content>

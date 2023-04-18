@@ -4,7 +4,7 @@ export interface Places {
     address: string
     image: string
     rating: number
-    price?: number
+    price: number
     categories: string[]
     coordinates?: {
         latitude: number

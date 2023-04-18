@@ -11,6 +11,7 @@ import { addDoc, collection } from 'firebase/firestore'
 import { FIRESTORE_DB } from '../../services/firebase'
 import { Places } from '../../interfaces/Places.types'
 import InputRating from '../../components/InputRating'
+import InputXY from '../../components/InputXY'
 
 const Add: React.FC = () => {
     const [place, setPlace] = React.useState<Places>({
@@ -29,6 +30,9 @@ const Add: React.FC = () => {
     const placesCollection = collection(FIRESTORE_DB, 'places')
 
     const addPlace = () => {
+        if (place.name === '') return
+        if (place.address === '') return
+        if (place.image === '') return
         addDoc(placesCollection, place)
     }
 
@@ -79,26 +83,45 @@ const Add: React.FC = () => {
                     )}
                 </S.ImageContainer>
                 <S.RatingContainer>
-                <InputRating
-                    onPress={(num: number) => {
-                        setPlace({ ...place, rating: num })
-                    }}
-                    value={place.rating}
-                    type="star"
-                />
-                <InputRating
-                    onPress={(num: number) => {
-                        setPlace({ ...place, price: num })
-                    }}
-                    value={place.rating}
-                    type="currency-usd"
+                    <InputRating
+                        onPress={(num: number) => {
+                            setPlace({ ...place, rating: num })
+                        }}
+                        value={place.rating}
+                        type="star"
+                    />
+                    <InputRating
+                        onPress={(num: number) => {
+                            setPlace({ ...place, price: num })
+                        }}
+                        value={place.price}
+                        type="currency-usd"
                     />
                 </S.RatingContainer>
-                
-                <Input placeholder="Nome" label="Nome do local" />
-                <Input placeholder="Endereço" label="Endereço" />
-                <Input placeholder="Coordenadas" label="Coordenadas" />
-                <Input placeholder="Categorias" label="Categorias" />
+
+                <Input
+                    placeholder="Nome"
+                    label="Nome do local"
+                    value={place.name}
+                    onChange={(e) => {
+                        setPlace({ ...place, name: e.nativeEvent.text })
+                    }}
+                />
+                <Input
+                    placeholder="Endereço"
+                    label="Endereço"
+                    value={place.address}
+                    onChange={(e) => {
+                        setPlace({ ...place, address: e.nativeEvent.text })
+                    }}
+                />
+                {/* <Input
+                    placeholder="Categorias"
+                    label="Categorias"
+                    onChange={(e) => {
+                        setPlace({ ...place, categories: e.nativeEvent.text })
+                    }}
+                /> */}
             </S.Content>
         </S.Container>
     )

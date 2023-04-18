@@ -10,11 +10,11 @@ interface ListProps {
 
 const List: React.FC<ListProps> = ({items}) => {
     return (
-        <ScrollView>
+        <>
             {items.map((item) => (
                 <ListItem key={item.id} item={item} />
             ))}
-        </ScrollView>
+        </>
     )
 }
 

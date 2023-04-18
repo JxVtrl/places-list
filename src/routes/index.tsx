@@ -9,6 +9,8 @@ import Register from '../screens/Register'
 import CommunityIcon from '../components/CommunityIcon'
 import Details from '../screens/Details/Details'
 
+import { AppProvider } from '../context/AppContext'
+
 export type AppParamList = {
     General: undefined
     Details: undefined
@@ -76,22 +78,22 @@ function GeneralAppRoutes() {
 
 function AppRoutes() {
     return (
-        <App.Navigator initialRouteName="General">
-            <App.Screen
-                name="General"
-                component={GeneralAppRoutes}
-                options={{ headerShown: false }}
-            />
-            <App.Screen
-                name="Details"
-                component={Details}
-                options={{ headerShown: false }}
-            />
-        </App.Navigator>
+        <AppProvider>
+            <App.Navigator initialRouteName="General">
+                <App.Screen
+                    name="General"
+                    component={GeneralAppRoutes}
+                    options={{ headerShown: false }}
+                />
+                <App.Screen
+                    name="Details"
+                    component={Details}
+                    options={{ headerShown: false }}
+                />
+            </App.Navigator>
+        </AppProvider>
     )
 }
-
-
 
 function AuthRoutes() {
     return (
